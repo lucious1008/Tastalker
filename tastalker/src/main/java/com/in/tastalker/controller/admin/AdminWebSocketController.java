@@ -12,14 +12,14 @@ public class AdminWebSocketController {
 	@Autowired
 	private AdminChatService adminChatService;
 	
-	@RequestMapping(value = "")
+	@RequestMapping(value = "15")
 	public ModelAndView searchChatLog(String date, String title){
 		ModelAndView mav = new ModelAndView();		
 		adminChatService.searchChatLog(date, title);		
 		mav.setViewName("검색 결과");
 		return mav;
 	}
-	@RequestMapping(value = "")
+	@RequestMapping(value = "16")
 	public ModelAndView viewChatLog(String date, String title){
 		ModelAndView mav = new ModelAndView();		
 		adminChatService.viewChatLog(date, date);

@@ -14,14 +14,14 @@ public class UserReportController {
 	@Autowired
 	private UserReportService userReportService;
 	
-	@RequestMapping(value = "")
+	@RequestMapping(value = "29")
 	public ModelAndView reportGourmet(ReportVO reportVO){
 		ModelAndView mav = new ModelAndView();		
 		userReportService.reportGourmet(reportVO);
 		mav.setViewName("맛집 제보한 후 가는 페이지");
 		return mav;
 	}
-	@RequestMapping(value = "")
+	@RequestMapping(value = "30")
 	public ModelAndView gotoreportGourmet(){
 		ModelAndView mav = new ModelAndView();		
 		mav.setViewName("맛집 제보페이지로 간다");

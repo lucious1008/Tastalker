@@ -14,7 +14,7 @@ public class AdminGourmetController {
 	@Autowired
 	private AdminGourmetService adminGourmetService;
 	
-	@RequestMapping(value = "")
+	@RequestMapping(value = "1")
 	public ModelAndView AdminGourmetCatalog(int pageNum){
 		ModelAndView mav = new ModelAndView();		
 		mav.addObject("맛집 리스트",adminGourmetService.gourmetCatalog(pageNum));
@@ -28,21 +28,21 @@ public class AdminGourmetController {
 		mav.setViewName("관리자의 맛집목록 페이지가 있는 곳(검색)");
 		return mav;
 	}
-	@RequestMapping(value = "")
+	@RequestMapping(value = "2")
 	public ModelAndView AdminModifyGourmetInfo(GourmetVO gourmetVO){
 		ModelAndView mav = new ModelAndView();		
 		mav.addObject("수정 성공 여부",adminGourmetService.modifyGourmetInfo(gourmetVO));
 		mav.setViewName("관리자가 맛집 정보 수정후 가는 페이지");
 		return mav;
 	}
-	@RequestMapping(value = "")
+	@RequestMapping(value = "3")
 	public ModelAndView AdminDeleteGourmet(int gourmetNum){
 		ModelAndView mav = new ModelAndView();		
 		mav.addObject("삭제 성공 여부",adminGourmetService.deleteGourmet(gourmetNum));
 		mav.setViewName("관리자가 맛집 정보 삭제후 가는 페이지");
 		return mav;
 	}
-	@RequestMapping(value = "")
+	@RequestMapping(value = "4")
 	public ModelAndView gotoSpecificationOfGourmetPage(int gourmetNum){
 		ModelAndView mav = new ModelAndView();		
 		mav.addObject("맛집 상세정보",adminGourmetService.specifingGourmetSpecification(gourmetNum));

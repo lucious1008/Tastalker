@@ -17,7 +17,7 @@ public class UserMemberController {
 	private UserMemberService userMemberService;	
 
 	
-	@RequestMapping(value = "")
+	@RequestMapping(value = "24")
 	public ModelAndView userLogin(MemberVO memberVO,HttpSession session){
 		ModelAndView mav = new ModelAndView();
 		int grade = userMemberService.userLogin(memberVO);
@@ -31,21 +31,21 @@ public class UserMemberController {
 		mav.setViewName("로그인 후 이동");
 		return mav;		
 	}
-	@RequestMapping(value = "")
+	@RequestMapping(value = "25")
 	public ModelAndView userInfoView(String userId){
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("회원 상세 정보", userMemberService.userInfoView(userId));
 		mav.setViewName("회원 상세정보페이지");
 		return mav;
 	}
-	@RequestMapping(value = "")
+	@RequestMapping(value = "26")
 	public ModelAndView ModifyuserInfo(MemberVO memberVO){
 		ModelAndView mav = new ModelAndView();
 		userMemberService.ModifyuserInfo(memberVO);
 		mav.setViewName("회원 정보 수정후 페이지");
 		return mav;
 	}
-	@RequestMapping(value = "")
+	@RequestMapping(value = "27")
 	public ModelAndView outOfOurTastalker(String userPw,HttpSession session){
 		ModelAndView mav = new ModelAndView();
 		userMemberService.outOfOurTastalker(userPw);
@@ -53,7 +53,7 @@ public class UserMemberController {
 		mav.setViewName("회원 탈퇴 후 페이지");
 		return mav;
 	}
-	@RequestMapping(value = "")
+	@RequestMapping(value = "28")
 	public ModelAndView userLogout(HttpSession session){
 		ModelAndView mav = new ModelAndView();
 		userMemberService.userLogout();
