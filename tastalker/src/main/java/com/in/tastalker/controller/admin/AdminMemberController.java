@@ -3,6 +3,7 @@ package com.in.tastalker.controller.admin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.in.tastalker.service.admin.AdminMemberService;
@@ -14,10 +15,17 @@ public class AdminMemberController {
 	private AdminMemberService adminMemberService;
 	
 	@RequestMapping(value = "5")
-	public ModelAndView searchMemberCatalog(MemberVO memberVO,int pageNum){
+	public ModelAndView searchMemberCatalog(MemberVO memberVO,@RequestParam int pageNum){
 		ModelAndView mav = new ModelAndView();		
 		mav.addObject("검색을 한 결과 리스트", adminMemberService.searchMemberCatalog(memberVO, pageNum));
 		mav.setViewName("관리자가 검색을 한뒤 보이는 회원 목록");		
+		return mav;
+	}
+	@RequestMapping(value = "5-1")
+	public ModelAndView MemberCatalog(@RequestParam int pageNum){
+		ModelAndView mav = new ModelAndView();		
+		mav.addObject("회원 리스트", adminMemberService.MemberCatalog(pageNum));
+		mav.setViewName("관리자 회원 목록");		
 		return mav;
 	}
 	@RequestMapping(value = "6")

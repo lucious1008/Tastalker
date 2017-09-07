@@ -1,6 +1,9 @@
 package com.in.tastalker.vo;
 
 import java.util.Date;
+import java.util.List;
+
+import org.springframework.web.multipart.MultipartFile;
 
 public class ReportVO {
 	private int reportNum;
@@ -14,6 +17,22 @@ public class ReportVO {
 	private String reportComment;
 	private String reportSort;
 	private Date reportReg;
+	private MultipartFile[] reportPicture;
+	private String[] reportPictureName;
+	
+	
+	public MultipartFile[] getReportPicture() {
+		return reportPicture;
+	}
+	public void setReportPicture(MultipartFile[] reportPicture) {
+		this.reportPicture = reportPicture;
+	}
+	public String[] getReportPictureName() {
+		return reportPictureName;
+	}
+	public void setReportPictureName(String[] reportPictureName) {
+		this.reportPictureName = reportPictureName;
+	}
 	public int getReportNum() {
 		return reportNum;
 	}

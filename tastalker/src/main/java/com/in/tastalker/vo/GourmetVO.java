@@ -12,9 +12,17 @@ public class GourmetVO {
 	private String gourmetTel;
 	private String gourmetMenu;
 	private String gourmetImage;
-	private MultipartFile gourmetPicture;
+	private MultipartFile[] gourmetPicture;
 	private String gourmetSort;	
 	private Date gourmetReg;
+	
+	
+	public MultipartFile[] getGourmetPicture() {
+		return gourmetPicture;
+	}
+	public void setGourmetPicture(MultipartFile[] gourmetPicture) {
+		this.gourmetPicture = gourmetPicture;
+	}
 	public int getGourmetNum() {
 		return gourmetNum;
 	}
@@ -57,12 +65,7 @@ public class GourmetVO {
 	public void setGourmetImage(String gourmetImage) {
 		this.gourmetImage = gourmetImage;
 	}
-	public MultipartFile getGourmetPicture() {
-		return gourmetPicture;
-	}
-	public void setGourmetPicture(MultipartFile gourmetPicture) {
-		this.gourmetPicture = gourmetPicture;
-	}
+
 	public String getGourmetSort() {
 		return gourmetSort;
 	}
