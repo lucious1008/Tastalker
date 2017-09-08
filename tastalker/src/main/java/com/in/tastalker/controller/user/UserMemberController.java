@@ -38,6 +38,12 @@ public class UserMemberController {
 		mav.setViewName("회원 상세정보페이지");
 		return mav;
 	}
+	@RequestMapping(value = "25-1")
+	public ModelAndView gotoUserInfoView(){
+		ModelAndView mav = new ModelAndView();		
+		mav.setViewName("회원 정보수정페이지");
+		return mav;
+	}
 	@RequestMapping(value = "26")
 	public ModelAndView ModifyuserInfo(MemberVO memberVO){
 		ModelAndView mav = new ModelAndView();
