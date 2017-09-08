@@ -47,7 +47,7 @@ public class UserMemberServiceImpl implements UserMemberService{
 	@Override
 	public boolean userJoin(MemberVO memberVO) {
 		// TODO Auto-generated method stub
-		return false;
+		return userMemberDAO.userJoin(memberVO);
 	}
 
 }

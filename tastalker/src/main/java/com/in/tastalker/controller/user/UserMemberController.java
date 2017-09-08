@@ -61,5 +61,12 @@ public class UserMemberController {
 		mav.setViewName("회원 탈퇴 후 페이지");
 		return mav;
 	}
+	@RequestMapping(value = "29")
+	public ModelAndView userJoin(MemberVO memberVO){
+		ModelAndView mav = new ModelAndView();
+		userMemberService.userJoin(memberVO);		
+		mav.setViewName("회원 탈퇴 후 페이지");
+		return mav;
+	}
 
 }
