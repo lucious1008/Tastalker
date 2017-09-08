@@ -8,5 +8,6 @@ public interface UserMemberService {
 	public MemberVO userInfoView(String userId);
 	public boolean ModifyuserInfo(MemberVO memberVO);
 	public boolean outOfOurTastalker(String userPw);
+	public boolean userJoin(MemberVO memberVO);
 
 }

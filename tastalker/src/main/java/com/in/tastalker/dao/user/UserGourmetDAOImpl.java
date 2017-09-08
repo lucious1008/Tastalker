@@ -2,6 +2,8 @@ package com.in.tastalker.dao.user;
 
 import java.util.List;
 
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.in.tastalker.vo.GourmetVO;
@@ -9,6 +11,9 @@ import com.in.tastalker.vo.GradeVO;
 import com.in.tastalker.vo.ReplyVO;
 @Repository("userGourmetDAO")
 public class UserGourmetDAOImpl implements UserGourmetDAO{
+	
+	@Autowired
+	private SqlSession sqlSession;
 
 	@Override
 	public boolean registGrade(GradeVO gradeVO) {

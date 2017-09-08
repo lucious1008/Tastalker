@@ -2,10 +2,12 @@ package com.in.tastalker.service.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.in.tastalker.dao.user.UserMemberDAO;
 import com.in.tastalker.vo.MemberVO;
 @Service("userMemberService")
+@Transactional
 public class UserMemberServiceImpl implements UserMemberService{
 	
 	@Autowired
@@ -40,6 +42,12 @@ public class UserMemberServiceImpl implements UserMemberService{
 	public boolean outOfOurTastalker(String userPw) {
 		// TODO Auto-generated method stub
 		return userMemberDAO.outOfOurTastalker(userPw);
+	}
+	@Transactional
+	@Override
+	public boolean userJoin(MemberVO memberVO) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

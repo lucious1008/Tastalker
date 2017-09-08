@@ -4,16 +4,18 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.in.tastalker.dao.user.UserGourmetDAO;
 import com.in.tastalker.vo.GourmetVO;
 import com.in.tastalker.vo.GradeVO;
 import com.in.tastalker.vo.ReplyVO;
 @Service("userGourmetService")
+@Transactional
 public class UserGourmetServiceImpl implements UserGourmetService{
 	@Autowired
 	private UserGourmetDAO userGourmetDAO;
-	
+	@Transactional
 	@Override
 	public boolean registGrade(GradeVO gradeVO) {
 		// TODO Auto-generated method stub
@@ -25,13 +27,13 @@ public class UserGourmetServiceImpl implements UserGourmetService{
 		// TODO Auto-generated method stub
 		return userGourmetDAO.viewGrade(gourmetNum);
 	}
-
+	@Transactional
 	@Override
 	public boolean modifyGrade(GradeVO gradeVO) {
 		// TODO Auto-generated method stub
 		return userGourmetDAO.modifyGrade(gradeVO);
 	}
-
+	@Transactional
 	@Override
 	public boolean registReply(ReplyVO replyVO) {
 		// TODO Auto-generated method stub
@@ -43,7 +45,7 @@ public class UserGourmetServiceImpl implements UserGourmetService{
 		// TODO Auto-generated method stub
 		return userGourmetDAO.viewReply(gourmetNum);
 	}
-
+	@Transactional
 	@Override
 	public boolean modifyReply(ReplyVO gradeVO) {
 		// TODO Auto-generated method stub

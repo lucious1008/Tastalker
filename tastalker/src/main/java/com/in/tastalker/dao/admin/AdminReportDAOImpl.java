@@ -2,11 +2,15 @@ package com.in.tastalker.dao.admin;
 
 import java.util.List;
 
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.in.tastalker.vo.ReportVO;
 @Repository("adminReportDAO")
 public class AdminReportDAOImpl implements AdminReportDAO{
+	@Autowired
+	private SqlSession sqlSession;
 
 	@Override
 	public List<ReportVO> reportCatalog(int 페이지넘버) {
