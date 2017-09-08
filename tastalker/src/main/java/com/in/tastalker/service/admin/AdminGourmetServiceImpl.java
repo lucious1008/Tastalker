@@ -4,9 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.in.tastalker.dao.admin.AdminGourmetDAO;
 import com.in.tastalker.vo.GourmetVO;
+
+@Transactional
 @Service("adminGourmetService")
 public class AdminGourmetServiceImpl implements AdminGourmetService{
 
@@ -30,7 +33,7 @@ public class AdminGourmetServiceImpl implements AdminGourmetService{
 		// TODO Auto-generated method stub
 		return adminGourmetDAO.specifingGourmetSpecification(맛집번호);
 	}
-
+	@Transactional
 	@Override
 	public boolean modifyGourmetInfo(GourmetVO gourmetVO) {
 		// TODO Auto-generated method stub
