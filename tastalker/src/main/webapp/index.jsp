@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+<<<<<<< HEAD
+123
+=======
 sdfsdf
+>>>>>>> refs/remotes/origin/master
 </body>
 </html>
