@@ -8,21 +8,16 @@ public class GourmetVO {
 	private int gourmetNum;
 	private String gourmetNm;
 	private String gourmetAdrStr;
-	private String gourmetAdrint;
+	private double gourmetAdrLat;
+	private double gourmetAdrLon;
 	private String gourmetTel;
 	private String gourmetMenu;
-	private String gourmetImage;
+	private String gourmetPictureName;
 	private MultipartFile[] gourmetPicture;
 	private String gourmetSort;	
 	private Date gourmetReg;
-	
-	
-	public MultipartFile[] getGourmetPicture() {
-		return gourmetPicture;
-	}
-	public void setGourmetPicture(MultipartFile[] gourmetPicture) {
-		this.gourmetPicture = gourmetPicture;
-	}
+	private float gourmetTotalGrd;
+	private int gourmetTotalRpl;
 	public int getGourmetNum() {
 		return gourmetNum;
 	}
@@ -41,11 +36,17 @@ public class GourmetVO {
 	public void setGourmetAdrStr(String gourmetAdrStr) {
 		this.gourmetAdrStr = gourmetAdrStr;
 	}
-	public String getGourmetAdrint() {
-		return gourmetAdrint;
+	public double getGourmetAdrLat() {
+		return gourmetAdrLat;
 	}
-	public void setGourmetAdrint(String gourmetAdrint) {
-		this.gourmetAdrint = gourmetAdrint;
+	public void setGourmetAdrLat(double gourmetAdrLat) {
+		this.gourmetAdrLat = gourmetAdrLat;
+	}
+	public double getGourmetAdrLon() {
+		return gourmetAdrLon;
+	}
+	public void setGourmetAdrLon(double gourmetAdrLon) {
+		this.gourmetAdrLon = gourmetAdrLon;
 	}
 	public String getGourmetTel() {
 		return gourmetTel;
@@ -59,13 +60,18 @@ public class GourmetVO {
 	public void setGourmetMenu(String gourmetMenu) {
 		this.gourmetMenu = gourmetMenu;
 	}
-	public String getGourmetImage() {
-		return gourmetImage;
+	public String getGourmetPictureName() {
+		return gourmetPictureName;
 	}
-	public void setGourmetImage(String gourmetImage) {
-		this.gourmetImage = gourmetImage;
+	public void setGourmetPictureName(String gourmetPictureName) {
+		this.gourmetPictureName = gourmetPictureName;
 	}
-
+	public MultipartFile[] getGourmetPicture() {
+		return gourmetPicture;
+	}
+	public void setGourmetPicture(MultipartFile[] gourmetPicture) {
+		this.gourmetPicture = gourmetPicture;
+	}
 	public String getGourmetSort() {
 		return gourmetSort;
 	}
@@ -78,8 +84,18 @@ public class GourmetVO {
 	public void setGourmetReg(Date gourmetReg) {
 		this.gourmetReg = gourmetReg;
 	}
-	
-	
-	
+	public float getGourmetTotalGrd() {
+		return gourmetTotalGrd;
+	}
+	public void setGourmetTotalGrd(float gourmetTotalGrd) {
+		this.gourmetTotalGrd = gourmetTotalGrd;
+	}
+	public int getGourmetTotalRpl() {
+		return gourmetTotalRpl;
+	}
+	public void setGourmetTotalRpl(int gourmetTotalRpl) {
+		this.gourmetTotalRpl = gourmetTotalRpl;
+	}
 
+	
 }

@@ -8,10 +8,37 @@ public class MemberVO {
 	private String userEmail;
 	private String userGender;
 	private String userAdrStr;
-	private String userAdrInt;	
+	private double userAdrLat;
+	private double userAdrLon;
 	private int userRank;
+	private int userPoint;
 	private Date userReg;
+	private String userNm;
 	
+	public double getUserAdrLat() {
+		return userAdrLat;
+	}
+	public void setUserAdrLat(double userAdrLat) {
+		this.userAdrLat = userAdrLat;
+	}
+	public double getUserAdrLon() {
+		return userAdrLon;
+	}
+	public void setUserAdrLon(double userAdrLon) {
+		this.userAdrLon = userAdrLon;
+	}
+	public String getUserNm() {
+		return userNm;
+	}
+	public void setUserNm(String userNm) {
+		this.userNm = userNm;
+	}
+	public int getUserPoint() {
+		return userPoint;
+	}
+	public void setUserPoint(int userPoint) {
+		this.userPoint = userPoint;
+	}
 	public int getUserRank() {
 		return userRank;
 	}
@@ -47,12 +74,6 @@ public class MemberVO {
 	}
 	public void setUserAdrStr(String userAdrStr) {
 		this.userAdrStr = userAdrStr;
-	}
-	public String getUserAdrInt() {
-		return userAdrInt;
-	}
-	public void setUserAdrInt(String userAdrInt) {
-		this.userAdrInt = userAdrInt;
 	}
 	public Date getUserReg() {
 		return userReg;

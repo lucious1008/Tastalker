@@ -1,6 +1,7 @@
 package com.in.tastalker.controller.admin;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.Resource;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -9,7 +10,7 @@ import com.in.tastalker.service.admin.AdminChatService;
 @Controller
 public class AdminWebSocketController {
 	
-	@Autowired
+	@Resource(name = "adminChatService")
 	private AdminChatService adminChatService;
 	
 	@RequestMapping(value = "15")

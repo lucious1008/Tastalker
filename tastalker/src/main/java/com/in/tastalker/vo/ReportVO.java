@@ -9,29 +9,25 @@ public class ReportVO {
 	private int reportNum;
 	private String reportNm;
 	private String reportAdrStr;
-	private String reportAdrInt;
+	private double reportAdrLat;
+	private double reportAdrLon;
 	private String reportTel;
 	private String reportMenu;
-	private String reportStatus;
+	private int reportStatus;
 	private String reportUser;
 	private String reportComment;
-	private String reportSort;
+	private int reportSort;
 	private Date reportReg;
 	private MultipartFile[] reportPicture;
-	private String[] reportPictureName;
+	private String reportPictureName;
 	
 	
-	public MultipartFile[] getReportPicture() {
-		return reportPicture;
+	
+	public double getReportAdrLon() {
+		return reportAdrLon;
 	}
-	public void setReportPicture(MultipartFile[] reportPicture) {
-		this.reportPicture = reportPicture;
-	}
-	public String[] getReportPictureName() {
-		return reportPictureName;
-	}
-	public void setReportPictureName(String[] reportPictureName) {
-		this.reportPictureName = reportPictureName;
+	public void setReportAdrLon(double reportAdrLon) {
+		this.reportAdrLon = reportAdrLon;
 	}
 	public int getReportNum() {
 		return reportNum;
@@ -51,12 +47,13 @@ public class ReportVO {
 	public void setReportAdrStr(String reportAdrStr) {
 		this.reportAdrStr = reportAdrStr;
 	}
-	public String getReportAdrInt() {
-		return reportAdrInt;
+	public double getReportAdrLat() {
+		return reportAdrLat;
 	}
-	public void setReportAdrInt(String reportAdrInt) {
-		this.reportAdrInt = reportAdrInt;
+	public void setReportAdrLat(double reportAdrLat) {
+		this.reportAdrLat = reportAdrLat;
 	}
+
 	public String getReportTel() {
 		return reportTel;
 	}
@@ -69,10 +66,10 @@ public class ReportVO {
 	public void setReportMenu(String reportMenu) {
 		this.reportMenu = reportMenu;
 	}
-	public String getReportStatus() {
+	public int getReportStatus() {
 		return reportStatus;
 	}
-	public void setReportStatus(String reportStatus) {
+	public void setReportStatus(int reportStatus) {
 		this.reportStatus = reportStatus;
 	}
 	public String getReportUser() {
@@ -87,10 +84,10 @@ public class ReportVO {
 	public void setReportComment(String reportComment) {
 		this.reportComment = reportComment;
 	}
-	public String getReportSort() {
+	public int getReportSort() {
 		return reportSort;
 	}
-	public void setReportSort(String reportSort) {
+	public void setReportSort(int reportSort) {
 		this.reportSort = reportSort;
 	}
 	public Date getReportReg() {
@@ -99,8 +96,17 @@ public class ReportVO {
 	public void setReportReg(Date reportReg) {
 		this.reportReg = reportReg;
 	}
-	
-	
-	
+	public MultipartFile[] getReportPicture() {
+		return reportPicture;
+	}
+	public void setReportPicture(MultipartFile[] reportPicture) {
+		this.reportPicture = reportPicture;
+	}
+	public String getReportPictureName() {
+		return reportPictureName;
+	}
+	public void setReportPictureName(String reportPictureName) {
+		this.reportPictureName = reportPictureName;
+	}
 
 }

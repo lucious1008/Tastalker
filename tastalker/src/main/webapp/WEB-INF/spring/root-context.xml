@@ -20,7 +20,7 @@
 <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
 <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory" /></bean>
 <!-- 지정된 베이스 패키지에서 DAO(Mapper) 를 검색하여 등록합니다.-->
-<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer"> <property name="basePackage" value="com.in.global.dao" /></bean>
+<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer"> <property name="basePackage" value="com.in.tastalker.dao" /></bean>
 <!-- 트랜잭션 매니저 bean 을 등록합니다. -->
 <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"> <property name="dataSource" ref="dataSource" /> </bean>
 <!-- 아노테이션 기반의 트랜잭션을 사용합니다. -->

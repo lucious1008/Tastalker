@@ -7,6 +7,15 @@ public class ReplyVO {
 	private String replyContent;
 	private Date replyReg;
 	private String userId;
+	private int userRank;
+	
+	
+	public int getUserRank() {
+		return userRank;
+	}
+	public void setUserRank(int userRank) {
+		this.userRank = userRank;
+	}
 	public int getReplyNum() {
 		return replyNum;
 	}

@@ -13,8 +13,6 @@ public class UserReportDAOImpl implements UserReportDAO{
 
 	@Override
 	public boolean reportGourmet(ReportVO reportVO) {
-		// TODO Auto-generated method stub
-		return false;
+		return sqlSession.insert("reportGourmet", reportVO) == 1;
 	}
-
 }

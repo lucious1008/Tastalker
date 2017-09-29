@@ -15,8 +15,6 @@ public class UserReportServiceImpl implements UserReportService{
 	@Override
 	@Transactional
 	public boolean reportGourmet(ReportVO reportVO) {
-		// TODO Auto-generated method stub
-		// 송명우
 		return userReportDAO.reportGourmet(reportVO);
 	}
 

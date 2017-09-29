@@ -1,7 +1,213 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.in.tastalker.dao.admin.AdminChatDAO">
+<mapper namespace="mappers">
+<select id="searchDirCnt" parameterType="HashMap" resultType="int">
+SELECT COUNT(*) FROM GOURMET_TABLE WHERE (6371*acos(cos(tasty_radian(#{lati}))*cos(tasty_radian(GOURMET_ADR_LAT))*cos(tasty_radian(GOURMET_ADR_LON)
+	-tasty_radian(#{lngi}))+sin(tasty_radian(#{lati}))*sin(tasty_radian(GOURMET_ADR_LAT)))) <![CDATA[<]]>#{sort2} AND GOURMET_SORT = #{sort}
+</select>
+<select id="searchKeyCnt" parameterType="HashMap" resultType="int">
+SELECT COUNT(*) FROM GOURMET_TABLE WHERE (6371*acos(cos(tasty_radian(${lati}))*cos(tasty_radian(GOURMET_ADR_LAT))*cos(tasty_radian(GOURMET_ADR_LON)
+	-tasty_radian(${lngi}))+sin(tasty_radian(${lati}))*sin(tasty_radian(GOURMET_ADR_LAT)))) <![CDATA[<]]>${sort2}
+	AND GOURMET_NM LIKE '%${keyword}%'
+</select>
+<select id="searchDirF" parameterType="HashMap" resultType="gourmetVO">
+SELECT *
+FROM (SELECT A.*,ROWNUM AS RNUM FROM (SELECT * FROM GOURMET_TABLE ORDER BY (6371*acos(cos(tasty_radian(#{lati}))*cos(tasty_radian(GOURMET_ADR_LAT))*cos(tasty_radian(GOURMET_ADR_LON)
+	-tasty_radian(#{lngi}))+sin(tasty_radian(#{lati}))*sin(tasty_radian(GOURMET_ADR_LAT))))) A WHERE ROWNUM <![CDATA[<]]>= #{pageNum+}) WHERE RNUM > #{pageNum} 
+AND (6371*acos(cos(tasty_radian(#{lati}))*cos(tasty_radian(GOURMET_ADR_LAT))*cos(tasty_radian(GOURMET_ADR_LON)
+	-tasty_radian(#{lngi}))+sin(tasty_radian(#{lati}))*sin(tasty_radian(GOURMET_ADR_LAT)))) <![CDATA[<]]>#{sort2} AND GOURMET_SORT = #{food}
+
+</select>
+<select id="searchDirS" parameterType="HashMap" resultType="gourmetVO">
+SELECT *
+FROM (SELECT A.*,ROWNUM AS RNUM FROM (SELECT * FROM GOURMET_TABLE ORDER BY GOURMET_TOTAL_GRD DESC) A WHERE ROWNUM <![CDATA[<]]>= #{pageNum+}) WHERE RNUM > #{pageNum} 
+AND (6371*acos(cos(tasty_radian(#{lati}))*cos(tasty_radian(GOURMET_ADR_LAT))*cos(tasty_radian(GOURMET_ADR_LON)
+	-tasty_radian(#{lngi}))+sin(tasty_radian(#{lati}))*sin(tasty_radian(GOURMET_ADR_LAT)))) <![CDATA[<]]>#{sort2} AND GOURMET_SORT = #{food}
+
+</select>
+<select id="searchDirT" parameterType="HashMap" resultType="gourmetVO">
+SELECT *
+FROM (SELECT A.*,ROWNUM AS RNUM FROM (SELECT * FROM GOURMET_TABLE ORDER BY GOURMET_TOTAL_RPL DESC) A WHERE ROWNUM <![CDATA[<]]>= #{pageNum+}) WHERE RNUM > #{pageNum} 
+AND (6371*acos(cos(tasty_radian(#{lati}))*cos(tasty_radian(GOURMET_ADR_LAT))*cos(tasty_radian(GOURMET_ADR_LON)
+	-tasty_radian(#{lngi}))+sin(tasty_radian(#{lati}))*sin(tasty_radian(GOURMET_ADR_LAT)))) <![CDATA[<]]>#{sort2} AND GOURMET_SORT = #{food}
+
+</select>
+<select id="searchKeyF" parameterType="HashMap" resultType="gourmetVO">
+SELECT *
+FROM (SELECT A.*,ROWNUM AS RNUM FROM (SELECT * FROM GOURMET_TABLE ORDER BY (6371*acos(cos(tasty_radian(${lati}))*cos(tasty_radian(GOURMET_ADR_LAT))*cos(tasty_radian(GOURMET_ADR_LON)
+	-tasty_radian(${lngi}))+sin(tasty_radian(${lati}))*sin(tasty_radian(GOURMET_ADR_LAT))))) A WHERE ROWNUM <![CDATA[<]]>= ${pageNump}) WHERE RNUM > ${pageNum} 
+AND (6371*acos(cos(tasty_radian(${lati}))*cos(tasty_radian(GOURMET_ADR_LAT))*cos(tasty_radian(GOURMET_ADR_LON)
+	-tasty_radian(${lngi}))+sin(tasty_radian(${lati}))*sin(tasty_radian(GOURMET_ADR_LAT)))) <![CDATA[<]]>${sort2}
+	AND GOURMET_NM LIKE '%${keyword}%'
+	
+</select>
+<select id="searchKeyS" parameterType="HashMap" resultType="gourmetVO">
+SELECT *
+FROM (SELECT A.*,ROWNUM AS RNUM FROM (SELECT * FROM GOURMET_TABLE ORDER BY GOURMET_TOTAL_GRD DESC) A WHERE ROWNUM <![CDATA[<]]>= ${pageNump}) WHERE RNUM > ${pageNum} 
+AND (6371*acos(cos(tasty_radian(${lati}))*cos(tasty_radian(GOURMET_ADR_LAT))*cos(tasty_radian(GOURMET_ADR_LON)
+	-tasty_radian(${lngi}))+sin(tasty_radian(${lati}))*sin(tasty_radian(GOURMET_ADR_LAT)))) <![CDATA[<]]>${sort2}
+	AND GOURMET_NM LIKE '%${keyword}%'
+	
+</select>
+<select id="searchKeyT" parameterType="HashMap" resultType="gourmetVO">
+SELECT *
+FROM (SELECT A.*,ROWNUM AS RNUM FROM (SELECT * FROM GOURMET_TABLE ORDER BY GOURMET_TOTAL_RPL DESC) A WHERE ROWNUM <![CDATA[<]]>= ${pageNump}) WHERE RNUM > ${pageNum} 
+AND (6371*acos(cos(tasty_radian(${lati}))*cos(tasty_radian(GOURMET_ADR_LAT))*cos(tasty_radian(GOURMET_ADR_LON)
+	-tasty_radian(${lngi}))+sin(tasty_radian(${lati}))*sin(tasty_radian(GOURMET_ADR_LAT)))) <![CDATA[<]]>${sort2}
+	AND GOURMET_NM LIKE '%${keyword}%'
+</select>
 
 
+
+
+
+
+	<insert id="userJoin" parameterType="memberVO">
+ 		insert into USER_TABLE (user_reg, user_id, user_pw, user_nm, user_email, user_gender, user_adr_str, user_adr_lat, user_adr_lon, user_point, user_rank)
+ 						values(SYSDATE,#{userId},#{userPw},#{userNm},#{userEmail},#{userGender},#{userAdrStr},#{userAdrLat},#{userAdrLon},0,1)
+ 	</insert>
+ 	
+ 	<select id="userIdChk" parameterType="String" resultType="Int"><!-- 아이디 중복체크 -->
+ 		select count(*) from user_table where user_id= #{userId}
+ 	</select>
+ 	
+ 	<insert id="reportGourmet" parameterType="reportVO">
+ 	DECLARE
+ 	vrank NUMBER;
+	vpoint NUMBER;
+	BEGIN 	
+ 	insert into REPORT_TABLE (REPORT_NUM,REPORT_NM,REPORT_ADR_STR,REPORT_TEL,REPORT_MENU,REPORT_STATUS,REPORT_USER,REPORT_COMMENT,REPORT_PICTURE_NAME,REPORT_SORT,REPORT_REG,REPORT_ADR_LAT,REPORT_ADR_LON) 
+ 	values(REPORT_TABLE_SEQ.NEXTVAL,'${reportNm}','${reportAdrStr}','${reportTel}','${reportMenu}',0,'${reportUser}','${reportComment}','${reportPictureName}',${reportSort},SYSDATE,${reportAdrLat},${reportAdrLon});
+ 	update user_table set user_point = user_point +1 where user_id = '${reportUser}';
+	SELECT user_rank,user_point into vrank,vpoint from user_table where user_id = '${reportUser}';
+	<![CDATA[if vpoint <=20 then vrank := 1;]]>
+	<![CDATA[elsif vpoint>20 AND vpoint <=50 then vrank := 2;]]>
+	<![CDATA[elsif vpoint>50 AND vpoint <=100 then vrank := 3;]]>
+	<![CDATA[elsif vpoint>100 AND vpoint <=300 then vrank := 4;]]>
+	<![CDATA[elsif vpoint>300 AND vpoint <=700 then vrank := 5;]]>
+	END IF;
+	update user_table set user_rank = vrank where user_id = '${reportUser}'; 
+	END; 						
+ 	</insert>
+ 	
+ 	<delete id="outOfOurTastalker" parameterType="memberVO">
+ 		delete from USER_TABLE where user_Id= #{userId} and user_Pw = #{userPw}
+ 	</delete>
+ 	
+ 	<select id="userInfoView" parameterType="String" resultType="memberVO">
+ 		select * from USER_TABLE where user_id= #{userId}
+ 	</select>
+ 	
+ 	<select id="userReportInfo" parameterType="HashMap" resultType="reportVO">
+ 		<![CDATA[select * from (select ROWNUM as RNUM, E.* from (select * from REPORT_TABLE where report_user= #{userId} order by report_Reg DESC) E Where ROWNUM <= #{page}*5) where RNUM > (#{page}-1)*5 ]]> 
+ 	</select>
+ 	
+ 	<update id="modifyuserInfo" parameterType="memberVO">
+ 		update USER_TABLE set user_pw= #{userPw}, user_Nm= #{userNm}, user_adr_str= #{userAdrStr}, user_email= #{userEmail} where user_id= #{userId}
+ 	</update>
+ 	
+ 	<select id="gourmetInfoView" parameterType="HashMap" resultType="gourmetVO">
+ 		select * from GOURMET_TABLE where gourmet_Num= #{num}
+ 	</select>
+ 	
+ 	<select id="gourmetImageView" parameterType="HashMap" resultType="gourmetVO">
+ 		select gourmet_Image[0],gourmet_Image[1],gourmet_Image[2],gourmet_Image[3],gourmet_Image[4]
+ 				 from GOURMET_TABLE where gourmet_Num= #{num}
+ 	</select>
+ 	
+ 	<insert id="registReply" parameterType="HashMap">
+ 	DECLARE
+vgrade NUMBER;
+vrank NUMBER;
+vpoint NUMBER;
+
+BEGIN
+SELECT COUNT(*) into vgrade from REPLY_${gourmetNum};
+UPDATE GOURMET_TABLE SET GOURMET_TOTAL_RPL = vgrade WHERE GOURMET_NUM = ${gourmetNum};
+update user_table set user_point = user_point +1 where user_id = #{userId};
+SELECT user_rank,user_point into vrank,vpoint from user_table where user_id = #{userId};
+<![CDATA[if vpoint <=20 then vrank := 1;]]>
+<![CDATA[elsif vpoint>20 AND vpoint <=50 then vrank := 2;]]>
+<![CDATA[elsif vpoint>50 AND vpoint <=100 then vrank := 3;]]>
+<![CDATA[elsif vpoint>100 AND vpoint <=300 then vrank := 4;]]>
+<![CDATA[elsif vpoint>300 AND vpoint <=700 then vrank := 5;]]>
+END IF;
+insert into Reply_${gourmetNum} (reply_Num, reply_Content, reply_Reg, user_Id,user_rank) values(Reply_${gourmetNum}_SEQ.NEXTVAL, #{replyContent}, SYSDATE, #{userId}, vrank);
+update user_table set user_rank = vrank where user_id = #{userId}; 
+END;	
+</insert>
+ 	
+ 	<insert id="registGrade" parameterType="HashMap">
+DECLARE
+vgrade NUMBER;
+vrank NUMBER;
+vpoint NUMBER;
+
+BEGIN
+insert into Grade_${gourmetNum} (grade_Num, grade_Grade, grade_Reg, user_Id) values(Grade_${gourmetNum}_SEQ.NEXTVAL, #{gradeGrade}, SYSDATE, #{userId});
+SELECT AVG(GRADE_GRADE) into vgrade from GRADE_${gourmetNum};
+UPDATE GOURMET_TABLE SET GOURMET_TOTAL_GRD = vgrade WHERE GOURMET_NUM = ${gourmetNum};
+update user_table set user_point = user_point +1 where user_id = #{userId};
+SELECT user_rank,user_point into vrank,vpoint from user_table where user_id = #{userId};
+<![CDATA[if vpoint <=20 then vrank := 1;]]>
+<![CDATA[elsif vpoint>20 AND vpoint <=50 then vrank := 2;]]>
+<![CDATA[elsif vpoint>50 AND vpoint <=100 then vrank := 3;]]>
+<![CDATA[elsif vpoint>100 AND vpoint <=300 then vrank := 4;]]>
+<![CDATA[elsif vpoint>300 AND vpoint <=700 then vrank := 5;]]>
+END IF;
+update user_table set user_rank = vrank where user_id = #{userId}; 
+END;	
+ 	</insert>
+ 	
+ 	<update id="modifyGrade" parameterType="HashMap">
+ 	DECLARE
+vgrade NUMBER;
+BEGIN
+update Grade_${gourmetNum} set grade_Grade= #{gradeGrade}, grade_Reg= SYSDATE where user_Id= #{userId};
+SELECT AVG(GRADE_GRADE) into vgrade from GRADE_${gourmetNum};
+UPDATE GOURMET_TABLE SET GOURMET_TOTAL_GRD = vgrade WHERE GOURMET_NUM = ${gourmetNum};
+END;  		
+ 	</update>
+ 	
+ 	<select id="checkGrade" parameterType="HashMap" resultType="Int">
+	 	select count(*) from Grade_${gourmetNum} where user_Id= #{userId}
+ 	</select>
+ 	
+ 	<select id="checkMyGrade" parameterType="HashMap" resultType="Int">
+	 	select grade_grade from Grade_${gourmetNum} where user_Id= #{userId}
+ 	</select>
+ 	
+ 	<select id="viewGrade" parameterType="HashMap" resultType="Int">
+	 	select AVG(grade_grade) From Grade_${gourmetNum}
+ 	</select>
+ 	
+ 	<select id="viewReplyCount" parameterType="HashMap" resultType="Int">
+	 	select count(*) from Reply_${num}
+ 	</select>
+ 	
+ 	<select id="viewReply" parameterType="HashMap" resultType="replyVO">
+	 	<![CDATA[select * from (select ROWNUM as RNUM, E.* from (select * from Reply_${num} order by reply_Reg DESC) E Where ROWNUM <= #{page}*5) where RNUM > (#{page}-1)*5 ]]> 
+ 	</select>
+ 	
+ 	<select id="userReportCount" parameterType="String" resultType="Int">
+	 	select count(*) from REPORT_TABLE where report_user= #{userId}
+ 	</select>
+ 	
+ 	<delete id="deleteReply" parameterType="HashMap">
+ 		delete from Reply_${gourmetNum} where reply_Num = ${replyNum}
+ 	</delete>
+ 	
+ 	<update id="modifyReply" parameterType="HashMap">
+ 		update Reply_${gourmetNum} set reply_Content=#{replyContent} where reply_Num = #{replyNum}
+ 	</update>
+ 	
+ 	<select id="login" parameterType="memberVO" resultType="memberVO">
+ 	select * from user_table where user_id = #{userId} and user_pw = #{userPw}
+ 	</select>
+ 	
+ 	
+ 	
+ 	
+ 	
 </mapper>
