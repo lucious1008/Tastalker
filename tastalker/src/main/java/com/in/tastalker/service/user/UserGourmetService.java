@@ -3,7 +3,6 @@ package com.in.tastalker.service.user;
 import java.util.List;
 
 import com.in.tastalker.vo.GourmetVO;
-import com.in.tastalker.vo.GradeVO;
 import com.in.tastalker.vo.ReplyVO;
 
 public interface UserGourmetService {

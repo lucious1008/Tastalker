@@ -1,5 +1,6 @@
 package com.in.tastalker.service.admin;
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,11 +17,12 @@ public class AdminReportServiceImpl implements AdminReportService{
 	@Override
 	public List<ReportVO> reportCatalog(int 페이지넘버) {
 		// TODO Auto-generated method stub
-		return adminReportDAO.reportCatalog(페이지넘버);
+		List<ReportVO> list = adminReportDAO.reportCatalog(페이지넘버);
+		return list;
 	}
 
 	@Override
-	public List<ReportVO> sortReportCatalog(String 제보상태, int 페이지넘버) {
+	public List<ReportVO> sortReportCatalog(int 제보상태, int 페이지넘버) {
 		// TODO Auto-generated method stub
 		return adminReportDAO.sortReportCatalog(제보상태, 페이지넘버);
 	}
@@ -41,6 +43,19 @@ public class AdminReportServiceImpl implements AdminReportService{
 	public boolean rejectReport(int reportVO) {
 		// TODO Auto-generated method stub
 		return adminReportDAO.rejectReport(reportVO);
+	}
+
+	@Override
+	public int listSum() {
+		// TODO Auto-generated method stub
+		return adminReportDAO.sumPage();
+	}
+
+	@Override
+	public int searchSum(int reportSearch) {
+		// TODO Auto-generated method stub
+		
+		return adminReportDAO.searchSum(reportSearch);
 	}
 
 }

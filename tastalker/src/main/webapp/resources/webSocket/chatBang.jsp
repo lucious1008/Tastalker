@@ -176,7 +176,7 @@ var sid = $('#SID').val(); //세션에서 얻어온다
 var area = $('#area').val();//세션에서 얻어온다
 var rank = $('#rank').val();//세션에서 얻어온다
 
-var openURL = 'ws://192.168.0.64:8080/broadCasting?area='+area+'&SID='+sid+'&rank='+rank;	
+var openURL = 'ws://192.168.0.10:8080/broadCasting?area='+area+'&SID='+sid+'&rank='+rank;	
 var openSocket = new WebSocket(openURL);
 
 openSocket.onopen = function(event){	

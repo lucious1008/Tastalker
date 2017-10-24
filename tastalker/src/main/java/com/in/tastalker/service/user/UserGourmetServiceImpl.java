@@ -50,7 +50,7 @@ public class UserGourmetServiceImpl implements UserGourmetService{
 		// TODO Auto-generated method stub
 		return userGourmetDAO.modifyReply(gourmetNum, replyNum, replyContent);
 	}
-
+	@Transactional
 	@Override
 	public int deleteReply(int gourmetNum,int replyNum) {
 		// TODO Auto-generated method stub

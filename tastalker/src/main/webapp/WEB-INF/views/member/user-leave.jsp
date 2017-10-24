@@ -184,14 +184,14 @@ body{margin: 0; background-color: #f0f0f0;}
 		</div>
 		<div id="usercontents">
 			<div id="userinfo">
-			<form method="post" action="27-1.do">
+			<form method="post" action="/member/27-1.do">
 				<p>${SID }님의 정보수정</p><hr>
-				<span class="front1">비밀번호 </span><p><input type="text" name="userPw"></p>
+				<span class="front1">비밀번호 </span><p><input type="password" name="userPw"></p>
 				<input id="letleave" type="submit" value="회원탈퇴">
 				
-				<input type="hidden" value="${SID }" id="userId">
-				<input type="hidden" value="${errorMsg}" id="errorMsg">
+				<input type="hidden" value="${SID }" name="userId">				
 			</form>
+			<input type="hidden" value="${errorMsg}" id="errorMsg">
 			</div>
 		</div>
 	</div>

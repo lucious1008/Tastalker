@@ -206,8 +206,249 @@ END;
  	select * from user_table where user_id = #{userId} and user_pw = #{userPw}
  	</select>
  	
+	
+	
+	
+
+	<select id="gourmetList" parameterType="int" resultType="gourmetVO">
+  		SELECT *
+		FROM (select rownum as rnum, e.* from (select * from gourmet_table order by rownum) e
+     		  WHERE rownum <![CDATA[<]]>= 3*#{num})
+		WHERE rnum > 3*(#{num}-1)
+  	</select>
+  	
+  	<select id="gourmetSum" resultType="int">
+  		SELECT count(*) as sum
+		FROM gourmet_table
+  	</select>
+  	
+  	<!-- 검색페이지 수 구하기 -->
+  	<select id="searchGourmetSumPage" parameterType="HashMap" resultType="int">
+  		SELECT count(*) as sum
+		FROM gourmet_table
+		WHERE 1=1 ${name} ${sort} ${adrStr} 
+  	</select>
+  	<!-- gourmet_num like = 5 or gourmet_sort = 5 or or gourmet_adr_str Like  %검색어% or gourmet_nm Like %검색어%-->
+	
+	<select id="gourmetSearch" parameterType="HashMap" resultType="gourmetVO">
+		SELECT *
+		FROM (select rownum as rnum, e.* from (select * from gourmet_table where 1=1 ${name} ${sort} ${adrStr} order by rownum) e
+     		  WHERE rownum <![CDATA[<]]>= 3*${num})
+		WHERE rnum > 3*(${num}-1)
+	
+	</select>
+	
+	<!-- 맛집 상세페이지-->
+	<select id="selectGourmetOne" parameterType="HashMap" resultType="gourmetVO">
+		SELECT *
+		FROM gourmet_table
+		WHERE gourmet_num = ${num}
+	</select>
+	
+	<!-- 맛집 댓글 전체 가져오기 -->
+	<select id="repyList" parameterType="HashMap" resultType="ReplyVO">
+		SELECT *
+		FROM ${reply}
+	</select>
+	
+	<!-- 맛집 댓글 삭제 -->
+	<delete id="gourmetReplyDel">
+		DELETE FROM ${tableName}
+		WHERE reply_num = ${replyNum}
+	</delete>
+	
+	<!-- 맛집 정보 수정 -->
+	<update id="modifyInsert" parameterType="gourmetVO">
+		UPDATE gourmet_table
+		SET gourmet_sort = ${gourmetSort}, gourmet_nm = '${gourmetNm}', gourmet_tel = '${gourmetTel}', gourmet_menu = '${gourmetMenu}', gourmet_adr_str = '${gourmetAdrStr}', gourmet_adr_lat = ${gourmetAdrLat}, gourmet_adr_lon = ${gourmetAdrLon}
+		WHERE gourmet_num = ${gourmetNum}
+	</update>
+	
+	<!-- 맛집 정보 삭제 -->
+	<delete id="deleteGroumet" parameterType="HashMap">
+		DELETE FROM gourmet_table
+		WHERE gourmet_num = ${groumetNum}
+	</delete>
+	<!-- 맛집 댓글 테이블 삭제 -->
+	<select id="dropReply" parameterType="HashMap">
+		DROP TABLE ${replyTitle}
+	</select>
+	<!-- 맛집 평점 테이블 삭제 -->
+	<select id="dropGrade" parameterType="HashMap">
+		DROP TABLE ${gradeTitle}
+	</select>
+	
+	
+	<select id="paging" parameterType="int" resultType="memberVO">	
+		SELECT *
+		FROM (select rownum as rnum, e.* from (select * from user_table order by rownum) e
+     		  WHERE rownum <![CDATA[<]]>= 3*#{num})
+		WHERE rnum > 3*(#{num}-1)
+	</select>
+	
+	<!-- 열의 총숫자 값 -->
+	<select id="pageNum" resultType="int">
+		SELECT count(*) as sum
+		FROM user_table
+	</select>
+	
+	<!-- 멤버 상세페이지 -->
+	<select id="selectOne" parameterType="String" resultType="memberVO">
+		SELECT *
+		FROM user_table
+		WHERE user_id=#{userId}
+	</select>
+	
+	<!-- 멤버 수정 등급 -->
+	<update id="updateRank" parameterType="memberVO">
+		UPDATE user_table
+		SET user_rank = #{userRank}
+		WHERE user_id = #{userId}
+	</update>
+	
+	<!-- 멤버 삭제 -->
+	<delete id="userDelete" parameterType="String">
+		DELETE FROM user_table
+		WHERE user_id = #{userId}
+	</delete>
+	
+	<!-- id 검색 -->
+	<select id="search" parameterType="HashMap" resultType="memberVO">
+		SELECT *
+		FROM (select rownum as rnum, e.* from (select * from user_table where 1=1 ${userIds} ${userNm} ${userAdrs}  ${userRank}  ${queryGender} order by rownum) e
+      	WHERE rownum <![CDATA[<]]>= 3*${num})
+		WHERE rnum > 3*(${num}-1) 
+		
+	</select>
+	
+	<!-- 검색의 결과 수-->
+	<select id="searchPageNum" parameterType="HashMap" resultType="int">
+		SELECT count(*) as sum
+		FROM user_table
+		WHERE 1=1 ${userIds} ${userNm} ${userAdrs}  ${userRank}  ${queryGender} order by rownum
+	</select>
  	
  	
+ 	
+ 	
+ 	<select id="report" parameterType="int" resultType="ReportVO">
+		SELECT *
+		FROM (select rownum as rnum, e.* from (select * from report_table order by rownum DESC) e
+      		WHERE rownum <![CDATA[<]]>= 3*#{num})
+		WHERE rnum > 3*(#{num}-1)
+
+	</select>
+	
+	<!-- 제보 테이블 전체수 -->
+	<select id="reportSumPage" resultType="int">
+		SELECT COUNT(*)
+		FROM report_table
+	</select>
+  
+  <!-- 제보 select 검색 결과 -->
+  <select id="searchReport" parameterType="hashMap" resultType="ReportVO">
+	SELECT *
+	FROM (select rownum as rnum, e.* from (select * from report_table where report_status = ${reportStatus} order by
+			rownum DESC) e
+	WHERE rownum <![CDATA[<]]>=
+	3*${pageNum})
+	WHERE rnum > 3*(${pageNum}-1)
+  </select>
+  
+  <!-- 검색 결과 총열의 수 -->
+  <select id="searchSum" parameterType="HashMap" resultType="int">
+  	SELECT COUNT(*) as searchSum
+	FROM report_table 
+  	WHERE report_status = ${searchSum}
+  </select>
+  
+  <select id="reportDetail" parameterType="int" resultType="ReportVO">
+  	SELECT *
+  	FROM report_table 
+  	WHERE report_num = #{num}
+  </select>
+  
+  <!-- 제보 승인거부 -->
+  <update id="statuUpdate" parameterType="int">
+  	UPDATE report_table
+  	SET report_status = 2
+  	WHERE report_num = #{num}
+  </update>
+  
+  <!-- 제보 정보를 맛집테이블로 이동 -->
+  <insert id="moveInfo" parameterType="ReportVO">
+  	INSERT INTO gourmet_table (gourmet_num, gourmet_nm, gourmet_adr_str, gourmet_tel, gourmet_menu, gourmet_picture_name, gourmet_sort, gourmet_reg, gourmet_adr_lat, gourmet_adr_lon, gourmet_total_rpl, gourmet_total_grd, report_num)
+	SELECT gourmet_table_seq.nextval, report_nm, report_adr_str, report_tel, report_menu, report_picture_name, report_sort, sysdate, report_adr_lat, report_adr_lon, 0, 0, report_num
+	FROM report_table
+	WHERE report_num = ${reportNum}  	
+  </insert>
+  
+  <!-- 제보 승인 및 수정내용 업데이트 -->
+  <update id="statuUpdateApp" parameterType="ReportVO">
+  	UPDATE report_table
+  	SET report_status = 1, report_sort = #{reportSort}, report_picture_name=#{reportPictureName}
+  	WHERE report_num = #{reportNum}
+  </update>
+  <!-- 맛집번호 가져오기 -->
+  <select id="gourmet" parameterType="ReportVO" resultType="int">
+  	SELECT gourmet_num
+  	FROM gourmet_table
+  	WHERE report_num = #{reportNum}
+  </select>
+  <!-- 댓글 테이블 생성 -->
+  <select id="replyNm" parameterType="HashMap">
+  	CREATE table ${tname} (
+	    "REPLY_NUM"     NUMBER(30,0) NOT NULL,
+	    "REPLY_CONTENT" VARCHAR2(200) NOT NULL,
+	    "REPLY_REG"     DATE NOT NULL,
+	    "USER_ID"       VARCHAR2(15) NOT NULL,
+	    "USER_RANK"     NUMBER(1,0),
+	    constraint  "${tname}_PK" primary key ("REPLY_NUM")
+	)
+  </select>
+  <!-- 댓글 시퀀즈 생성 -->
+  <select id="replyseq" parameterType="HashMap">
+  	CREATE sequence "${tname}_SEQ" 
+  </select>
+
+  <!-- 평점테이블 생성 -->
+  <select id="gradeNm" parameterType="HashMap">
+	CREATE table ${gname} (
+		"GRADE_NUM" NUMBER(30,0) NOT NULL,
+		"GRADE_GRADE" VARCHAR2(200) NOT NULL,
+		"GRADE_REG" DATE NOT NULL,
+		"USER_ID" VARCHAR2(15) NOT NULL,
+	constraint "${gname}_PK" primary key ("GRADE_NUM")
+	)
+  </select>
+  
+   <!-- 평점 시퀀즈 생성 -->
+  <select id="gradeNmseq" parameterType="HashMap">
+  	CREATE sequence "${gname}_SEQ" 
+  </select>
+  
+  
+  
+  <!-- 평점altter 생성  -->
+  <select id="altter" parameterType="HashMap">
+  	ALTER TABLE "${tname}" ADD CONSTRAINT "${tname}_FK" 
+		FOREIGN KEY ("USER_ID")
+		REFERENCES "USER_TABLE" ("USER_ID")
+		ON DELETE CASCADE
+  </select>
+  <!-- 제보유저 호출 -->
+  <select id="userPoint" parameterType="HashMap" resultType="int">
+  	SELECT user_point
+  	FROM user_table
+  	WHERE user_id = #{user}
+  </select>
+  <!-- 포인트 적립 -->
+  <update id="plus" parameterType="HashMap">
+  	UPDATE user_table
+  	SET user_point = #{point}
+  	WHERE user_id=#{user}
+  
+  </update>
  	
  	
 </mapper>

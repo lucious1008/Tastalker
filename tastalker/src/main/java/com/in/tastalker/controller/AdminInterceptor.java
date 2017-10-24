@@ -11,7 +11,7 @@ public class AdminInterceptor extends HandlerInterceptorAdapter{
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 		if(request.getSession().getAttribute("Admin")==null){
-			response.sendRedirect("gotoMain.do");
+			response.sendRedirect("redirect:/member/back.do");
 			return false;
 		}else return true;
 	}

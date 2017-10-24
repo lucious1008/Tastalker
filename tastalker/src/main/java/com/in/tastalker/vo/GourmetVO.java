@@ -14,7 +14,7 @@ public class GourmetVO {
 	private String gourmetMenu;
 	private String gourmetPictureName;
 	private MultipartFile[] gourmetPicture;
-	private String gourmetSort;	
+	private int gourmetSort;	
 	private Date gourmetReg;
 	private float gourmetTotalGrd;
 	private int gourmetTotalRpl;
@@ -72,10 +72,10 @@ public class GourmetVO {
 	public void setGourmetPicture(MultipartFile[] gourmetPicture) {
 		this.gourmetPicture = gourmetPicture;
 	}
-	public String getGourmetSort() {
+	public int getGourmetSort() {
 		return gourmetSort;
 	}
-	public void setGourmetSort(String gourmetSort) {
+	public void setGourmetSort(int gourmetSort) {
 		this.gourmetSort = gourmetSort;
 	}
 	public Date getGourmetReg() {

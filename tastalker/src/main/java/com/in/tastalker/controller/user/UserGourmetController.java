@@ -23,7 +23,6 @@ public class UserGourmetController {
 	private UserGourmetService userGourmetService;
 	@RequestMapping(value = "member/17.do", method = RequestMethod.POST)//댓글 등록
 	public void registReply(@RequestParam String gourmetNum, @RequestParam String replyContent,HttpServletResponse response, HttpServletRequest request ) throws IOException{
-		ModelAndView mav = new ModelAndView();
 		PrintWriter out = response.getWriter();
 		String userId = (String)request.getSession().getAttribute("SID");
 		if(userGourmetService.registReply(Integer.parseInt(gourmetNum),replyContent,userId)){
@@ -36,7 +35,6 @@ public class UserGourmetController {
 	}
 	@RequestMapping(value = "member/18.do")
 	public void registGrade(@RequestParam String gourmetNum, @RequestParam String gradeGrade,HttpServletResponse response, HttpServletRequest request) throws IOException{
-		ModelAndView mav = new ModelAndView();
 		String userId = (String)request.getSession().getAttribute("SID");
 		PrintWriter out = response.getWriter();
 		// select 먼저 하고 값이 있으면 수정 없으면 등록
@@ -101,8 +99,6 @@ public class UserGourmetController {
 		mav.setViewName("search/user-storedetail");//맛집 상세 페이지
 		return mav;
 	}
-
-
 	@RequestMapping(value = "searchDir.do",method=RequestMethod.GET)
 	public ModelAndView searchGourmetByDirectory(@RequestParam String lati, @RequestParam String lngi, @RequestParam String pageNum,@RequestParam String food,@RequestParam String sort1,@RequestParam String sort2){
 		ModelAndView mav = new ModelAndView();
@@ -118,7 +114,6 @@ public class UserGourmetController {
 		mav.addObject("sendType", "directory");
 		mav.setViewName("search/searchResult");
 		return mav;
-		
 	}
 	@RequestMapping(value = "searchKey.do",method=RequestMethod.GET)
 	public ModelAndView searchGourmetByKeyword(@RequestParam String keyword,@RequestParam String lati, @RequestParam String lngi, @RequestParam String pageNum,@RequestParam String sort1,@RequestParam String sort2){
@@ -136,7 +131,4 @@ public class UserGourmetController {
 		mav.setViewName("search/searchResult");
 		return mav;
 	}
-
-
-	
 }

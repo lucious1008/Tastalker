@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.in.tastalker.service.admin.AdminMemberService;
 import com.in.tastalker.service.user.UserMemberService;
 import com.in.tastalker.vo.MemberVO;
 
@@ -26,7 +27,8 @@ public class UserMemberController {
 	
 	@Autowired
 	private UserMemberService userMemberService;	
-	
+	@Autowired
+	private AdminMemberService adminMemberService;
 	
 	@RequestMapping(value = "gotoMain.do")
 	public ModelAndView gotoMain(){
@@ -49,9 +51,10 @@ public class UserMemberController {
 		MemberVO member = userMemberService.userLogin(memberVO);		
 		if(member.getUserId()!=null){
 			switch (member.getUserRank()) {
-			case 0: mav.setViewName("관리자");
-			session.setAttribute("errMsg", "");
-				break;
+			case 0:		
+	
+			mav.setViewName("redirect:/admin/5.do");		
+			return mav;				
 			default:mav.setViewName("main");
 				session.setAttribute("SID", member.getUserId());
 				session.setAttribute("rank", member.getUserRank());
@@ -113,10 +116,10 @@ public class UserMemberController {
 	
 	@RequestMapping(value = "member/27-1.do", method =  RequestMethod.POST)
 	public ModelAndView outOfOurTastalker(@ModelAttribute MemberVO memberVO,HttpSession session){
-		ModelAndView mav = new ModelAndView();		
+		ModelAndView mav = new ModelAndView();
 		if(userMemberService.outOfOurTastalker(memberVO)){
 			session.invalidate();//session값을 지움
-			mav.setViewName("main");
+			mav.setViewName("redirect:../gotoMain.do");
 			return mav;//회원탈퇴
 		}else{			
 			mav.addObject("errorMsg","회원탈퇴 실패하였습니다.");
@@ -129,6 +132,8 @@ public class UserMemberController {
 	public ModelAndView userLogout(HttpSession session){
 		session.removeAttribute("SID");
 		session.removeAttribute("rank");
+		session.removeAttribute("Admin");
+		session.removeAttribute("nowPage");
 		ModelAndView mav = new ModelAndView();		
 		mav.setViewName("redirect:../gotoMain.do");		
 		return mav;//로그아웃하기

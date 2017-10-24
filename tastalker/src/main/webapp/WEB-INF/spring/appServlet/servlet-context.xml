@@ -81,15 +81,6 @@
 	<beans:bean class="com.in.tastalker.controller.LoginInterceptor" />
 	</interceptor>
 	
-	<interceptor>
-	<mapping path="/member/logout.do"/>
-	<beans:bean class="com.in.tastalker.controller.LoginInterceptor" />
-	</interceptor>
-	
-	<interceptor>
-	<mapping path="/admin/*"/>
-	<beans:bean class="com.in.tastalker.controller.AdminInterceptor" />
-	</interceptor>
 	
 	
 	

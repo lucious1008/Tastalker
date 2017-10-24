@@ -42,6 +42,8 @@ public class UserMemberDAOImpl implements UserMemberDAO{
 
 	@Override
 	public boolean outOfOurTastalker(MemberVO memberVO) {
+		
+		
 		return sqlSession.delete("outOfOurTastalker", memberVO) == 1;
 	}
 	

@@ -31,12 +31,12 @@ public class UserMemberServiceImpl implements UserMemberService{
 	public MemberVO userInfoView(String userId) {
 		return userMemberDAO.userInfoView(userId);
 	}
-
+	@Transactional
 	@Override
 	public boolean modifyuserInfo(MemberVO memberVO) {
 		return userMemberDAO.modifyuserInfo(memberVO);
 	}
-
+	@Transactional
 	@Override
 	public boolean outOfOurTastalker(MemberVO memberVO) {
 		return userMemberDAO.outOfOurTastalker(memberVO);

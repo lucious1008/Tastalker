@@ -283,7 +283,10 @@ public class UserWebsocketBroadCasting {
 						/*if(!client.equals(session)){*/
 							try {
 								client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+fileName+":tastakerChattingSlash:"+timeData+":tastakerChattingSlash:"+rank);
-								txtLog= new File(txtPath+fileDate+"강남구.txt");
+								File folder = new File(txtPath+fileDate);
+								if(!folder.exists())folder.mkdir();
+								txtLog= new File(txtPath+fileDate+"\\강남구.txt");
+								
 								BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 								fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span><img src='/resources/webSocket/photo/"+fileName+"' width='150px' height='150px'> "+timeData+"</span></li><br>\r\n");
 								fw.flush();
@@ -302,7 +305,9 @@ public class UserWebsocketBroadCasting {
 						/*if(!client.equals(session)){*/
 							try {
 								client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+fileName+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-								txtLog= new File(txtPath+fileDate+"강동구.txt");
+								File folder = new File(txtPath+fileDate);
+								if(!folder.exists())folder.mkdir();
+								txtLog= new File(txtPath+fileDate+"/강동구.txt");
 								BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 								fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span><img src='/resources/webSocket/photo/"+fileName+"' width='150px' height='150px'> "+timeData+"</span></li><br>\r\n");
 								fw.flush();
@@ -320,7 +325,9 @@ public class UserWebsocketBroadCasting {
 						/*if(!client.equals(session)){*/
 							try {
 								client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+fileName+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-								txtLog= new File(txtPath+fileDate+"강북구.txt");
+								File folder = new File(txtPath+fileDate);
+								if(!folder.exists())folder.mkdir();
+								txtLog= new File(txtPath+fileDate+"/강북구.txt");
 								BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 								fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span><img src='/resources/webSocket/photo/"+fileName+"' width='150px' height='150px'> "+timeData+"</span></li><br>\r\n");
 								fw.flush();
@@ -338,7 +345,9 @@ public class UserWebsocketBroadCasting {
 						/*if(!client.equals(session)){*/
 							try {
 								client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+fileName+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-								txtLog= new File(txtPath+fileDate+"강서구.txt");
+								File folder = new File(txtPath+fileDate);
+								if(!folder.exists())folder.mkdir();
+								txtLog= new File(txtPath+fileDate+"/강서구.txt");
 								BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 								fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span><img src='/resources/webSocket/photo/"+fileName+"' width='150px' height='150px'> "+timeData+"</span></li><br>\r\n");
 								fw.flush();
@@ -356,7 +365,9 @@ public class UserWebsocketBroadCasting {
 						/*if(!client.equals(session)){*/
 							try {
 								client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+fileName+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-								txtLog= new File(txtPath+fileDate+"관악구.txt");
+								File folder = new File(txtPath+fileDate);
+								if(!folder.exists())folder.mkdir();
+								txtLog= new File(txtPath+fileDate+"/관악구.txt");
 								BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 								fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span><img src='/resources/webSocket/photo/"+fileName+"' width='150px' height='150px'> "+timeData+"</span></li><br>\r\n");
 								fw.flush();
@@ -374,7 +385,9 @@ public class UserWebsocketBroadCasting {
 						/*if(!client.equals(session)){*/
 							try {
 								client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+fileName+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-								txtLog= new File(txtPath+fileDate+"광진구.txt");
+								File folder = new File(txtPath+fileDate);
+								if(!folder.exists())folder.mkdir();
+								txtLog= new File(txtPath+fileDate+"/광진구.txt");
 								BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 								fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span><img src='/resources/webSocket/photo/"+fileName+"' width='150px' height='150px'> "+timeData+"</span></li><br>\r\n");
 								fw.flush();
@@ -392,7 +405,9 @@ public class UserWebsocketBroadCasting {
 						/*if(!client.equals(session)){*/
 							try {
 								client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+fileName+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-								txtLog= new File(txtPath+fileDate+"구로구.txt");
+								File folder = new File(txtPath+fileDate);
+								if(!folder.exists())folder.mkdir();
+								txtLog= new File(txtPath+fileDate+"/구로구.txt");
 								BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 								fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span><img src='/resources/webSocket/photo/"+fileName+"' width='150px' height='150px'> "+timeData+"</span></li><br>\r\n");
 								fw.flush();
@@ -409,7 +424,9 @@ public class UserWebsocketBroadCasting {
 						/*if(!client.equals(session)){*/
 							try {
 								client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+fileName+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-								txtLog= new File(txtPath+fileDate+"금천구.txt");
+								File folder = new File(txtPath+fileDate);
+								if(!folder.exists())folder.mkdir();
+								txtLog= new File(txtPath+fileDate+"/금천구.txt");
 								BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 								fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span><img src='/resources/webSocket/photo/"+fileName+"' width='150px' height='150px'> "+timeData+"</span></li><br>\r\n");
 								fw.flush();
@@ -426,7 +443,9 @@ public class UserWebsocketBroadCasting {
 						/*if(!client.equals(session)){*/
 							try {
 								client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+fileName+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-								txtLog= new File(txtPath+fileDate+"노원구.txt");
+								File folder = new File(txtPath+fileDate);
+								if(!folder.exists())folder.mkdir();
+								txtLog= new File(txtPath+fileDate+"/노원구.txt");
 								BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 								fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span><img src='/resources/webSocket/photo/"+fileName+"' width='150px' height='150px'> "+timeData+"</span></li><br>\r\n");
 								fw.flush();
@@ -443,7 +462,9 @@ public class UserWebsocketBroadCasting {
 						/*if(!client.equals(session)){*/
 							try {
 								client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+fileName+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-								txtLog= new File(txtPath+fileDate+"도봉구.txt");
+								File folder = new File(txtPath+fileDate);
+								if(!folder.exists())folder.mkdir();
+								txtLog= new File(txtPath+fileDate+"/도봉구.txt");
 								BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 								fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span><img src='/resources/webSocket/photo/"+fileName+"' width='150px' height='150px'> "+timeData+"</span></li><br>\r\n");
 								fw.flush();
@@ -460,7 +481,9 @@ public class UserWebsocketBroadCasting {
 						/*if(!client.equals(session)){*/
 							try {
 								client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+fileName+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-								txtLog= new File(txtPath+fileDate+"동대문구.txt");
+								File folder = new File(txtPath+fileDate);
+								if(!folder.exists())folder.mkdir();
+								txtLog= new File(txtPath+fileDate+"/동대문구.txt");
 								BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 								fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span><img src='/resources/webSocket/photo/"+fileName+"' width='150px' height='150px'> "+timeData+"</span></li><br>\r\n");
 								fw.flush();
@@ -477,7 +500,9 @@ public class UserWebsocketBroadCasting {
 						/*if(!client.equals(session)){*/
 							try {
 								client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+fileName+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-								txtLog= new File(txtPath+fileDate+"동작구.txt");
+								File folder = new File(txtPath+fileDate);
+								if(!folder.exists())folder.mkdir();
+								txtLog= new File(txtPath+fileDate+"/동작구.txt");
 								BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 								fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span><img src='/resources/webSocket/photo/"+fileName+"' width='150px' height='150px'> "+timeData+"</span></li><br>\r\n");
 								fw.flush();
@@ -494,7 +519,9 @@ public class UserWebsocketBroadCasting {
 						/*if(!client.equals(session)){*/
 							try {
 								client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+fileName+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-								txtLog= new File(txtPath+fileDate+"마포구.txt");
+								File folder = new File(txtPath+fileDate);
+								if(!folder.exists())folder.mkdir();
+								txtLog= new File(txtPath+fileDate+"/마포구.txt");
 								BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 								fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span><img src='/resources/webSocket/photo/"+fileName+"' width='150px' height='150px'> "+timeData+"</span></li><br>\r\n");
 								fw.flush();
@@ -511,7 +538,7 @@ public class UserWebsocketBroadCasting {
 						/*if(!client.equals(session)){*/
 							try {
 								client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+fileName+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-								txtLog= new File(txtPath+fileDate+"서대문구.txt");
+								txtLog= new File(txtPath+fileDate+"/서대문구.txt");
 								BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 								fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span><img src='/resources/webSocket/photo/"+fileName+"' width='150px' height='150px'> "+timeData+"</span></li><br>\r\n");
 								fw.flush();
@@ -528,7 +555,9 @@ public class UserWebsocketBroadCasting {
 						/*if(!client.equals(session)){*/
 							try {
 								client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+fileName+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-								txtLog= new File(txtPath+fileDate+"서초구.txt");
+								File folder = new File(txtPath+fileDate);
+								if(!folder.exists())folder.mkdir();
+								txtLog= new File(txtPath+fileDate+"/서초구.txt");
 								BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 								fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span><img src='/resources/webSocket/photo/"+fileName+"' width='150px' height='150px'> "+timeData+"</span></li><br>\r\n");
 								fw.flush();
@@ -545,7 +574,9 @@ public class UserWebsocketBroadCasting {
 						//if(!client.equals(session)){
 							try {
 								client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+fileName+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-								txtLog= new File(txtPath+fileDate+"성동구.txt");
+								File folder = new File(txtPath+fileDate);
+								if(!folder.exists())folder.mkdir();
+								txtLog= new File(txtPath+fileDate+"/성동구.txt");
 								BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 								fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span><img src='/resources/webSocket/photo/"+fileName+"' width='150px' height='150px'> "+timeData+"</span></li><br>\r\n");
 								fw.flush();
@@ -562,7 +593,9 @@ public class UserWebsocketBroadCasting {
 						//if(!client.equals(session)){
 							try {
 								client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+fileName+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-								txtLog= new File(txtPath+fileDate+"성북구.txt");
+								File folder = new File(txtPath+fileDate);
+								if(!folder.exists())folder.mkdir();
+								txtLog= new File(txtPath+fileDate+"/성북구.txt");
 								BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 								fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span><img src='/resources/webSocket/photo/"+fileName+"' width='150px' height='150px'> "+timeData+"</span></li><br>\r\n");
 								fw.flush();
@@ -579,7 +612,9 @@ public class UserWebsocketBroadCasting {
 						//if(!client.equals(session)){
 							try {
 								client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+fileName+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-								txtLog= new File(txtPath+fileDate+"송파구.txt");
+								File folder = new File(txtPath+fileDate);
+								if(!folder.exists())folder.mkdir();
+								txtLog= new File(txtPath+fileDate+"/송파구.txt");
 								BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 								fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span><img src='/resources/webSocket/photo/"+fileName+"' width='150px' height='150px'> "+timeData+"</span></li><br>\r\n");
 								fw.flush();
@@ -596,7 +631,9 @@ public class UserWebsocketBroadCasting {
 						//if(!client.equals(session)){
 							try {
 								client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+fileName+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-								txtLog= new File(txtPath+fileDate+"양천구.txt");
+								File folder = new File(txtPath+fileDate);
+								if(!folder.exists())folder.mkdir();
+								txtLog= new File(txtPath+fileDate+"/양천구.txt");
 								BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 								fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span><img src='/resources/webSocket/photo/"+fileName+"' width='150px' height='150px'> "+timeData+"</span></li><br>\r\n");
 								fw.flush();
@@ -613,7 +650,9 @@ public class UserWebsocketBroadCasting {
 						//if(!client.equals(session)){
 							try {
 								client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+fileName+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-								txtLog= new File(txtPath+fileDate+"영등포구.txt");
+								File folder = new File(txtPath+fileDate);
+								if(!folder.exists())folder.mkdir();
+								txtLog= new File(txtPath+fileDate+"/영등포구.txt");
 								BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 								fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span><img src='/resources/webSocket/photo/"+fileName+"' width='150px' height='150px'> "+timeData+"</span></li><br>\r\n");
 								fw.flush();
@@ -630,7 +669,9 @@ public class UserWebsocketBroadCasting {
 						//if(!client.equals(session)){
 							try {
 								client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+fileName+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-								txtLog= new File(txtPath+fileDate+"용산구.txt");
+								File folder = new File(txtPath+fileDate);
+								if(!folder.exists())folder.mkdir();
+								txtLog= new File(txtPath+fileDate+"/용산구.txt");
 								BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 								fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span><img src='/resources/webSocket/photo/"+fileName+"' width='150px' height='150px'> "+timeData+"</span></li><br>\r\n");
 								fw.flush();
@@ -647,7 +688,9 @@ public class UserWebsocketBroadCasting {
 						//if(!client.equals(session)){
 							try {
 								client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+fileName+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-								txtLog= new File(txtPath+fileDate+"은평구.txt");
+								File folder = new File(txtPath+fileDate);
+								if(!folder.exists())folder.mkdir();
+								txtLog= new File(txtPath+fileDate+"/은평구.txt");
 								BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 								fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span><img src='/resources/webSocket/photo/"+fileName+"' width='150px' height='150px'> "+timeData+"</span></li><br>\r\n");
 								fw.flush();
@@ -664,7 +707,9 @@ public class UserWebsocketBroadCasting {
 						//if(!client.equals(session)){
 							try {
 								client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+fileName+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-								txtLog= new File(txtPath+fileDate+"종로구.txt");
+								File folder = new File(txtPath+fileDate);
+								if(!folder.exists())folder.mkdir();
+								txtLog= new File(txtPath+fileDate+"/종로구.txt");
 								BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 								fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span><img src='/resources/webSocket/photo/"+fileName+"' width='150px' height='150px'> "+timeData+"</span></li><br>\r\n");
 								fw.flush();
@@ -681,7 +726,9 @@ public class UserWebsocketBroadCasting {
 						//if(!client.equals(session)){
 							try {
 								client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+fileName+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-								txtLog= new File(txtPath+fileDate+"중구.txt");
+								File folder = new File(txtPath+fileDate);
+								if(!folder.exists())folder.mkdir();
+								txtLog= new File(txtPath+fileDate+"/중구.txt");
 								BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 								fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span><img src='/resources/webSocket/photo/"+fileName+"' width='150px' height='150px'> "+timeData+"</span></li><br>\r\n");
 								fw.flush();
@@ -698,7 +745,9 @@ public class UserWebsocketBroadCasting {
 						//if(!client.equals(session)){
 							try {
 								client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+fileName+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-								txtLog= new File(txtPath+fileDate+"중랑구.txt");
+								File folder = new File(txtPath+fileDate);
+								if(!folder.exists())folder.mkdir();
+								txtLog= new File(txtPath+fileDate+"/중랑구.txt");
 								BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 								fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span><img src='/resources/webSocket/photo/"+fileName+"' width='150px' height='150px'> "+timeData+"</span></li><br>\r\n");
 								fw.flush();
@@ -719,7 +768,9 @@ public class UserWebsocketBroadCasting {
 					/*if(!client.equals(session)){*/					
 						try {
 							client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+message+":tastakerChattingSlash:"+timeData+":tastakerChattingSlash:"+rank);
-							txtLog= new File(txtPath+fileDate+"강남구.txt");
+							File folder = new File(txtPath+fileDate);
+							if(!folder.exists())folder.mkdir();
+							txtLog= new File(txtPath+fileDate+"\\강남구.txt");							
 							BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 							fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span>"+message+" "+timeData+"</span></li><br>\r\n");
 							fw.flush();
@@ -737,7 +788,9 @@ public class UserWebsocketBroadCasting {
 					//if(!client.equals(session)){
 						try {
 							client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+message+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-							txtLog= new File(txtPath+fileDate+"강동구.txt");
+							File folder = new File(txtPath+fileDate);
+							if(!folder.exists())folder.mkdir();
+							txtLog= new File(txtPath+fileDate+"/강동구.txt");
 							BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 							fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span>"+message+" "+timeData+"</span></li><br>\r\n");
 							fw.flush();
@@ -755,7 +808,9 @@ public class UserWebsocketBroadCasting {
 					//if(!client.equals(session)){
 						try {
 							client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+message+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-							txtLog= new File(txtPath+fileDate+"강북구.txt");
+							File folder = new File(txtPath+fileDate);
+							if(!folder.exists())folder.mkdir();
+							txtLog= new File(txtPath+fileDate+"/강북구.txt");
 							BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 							fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span>"+message+" "+timeData+"</span></li><br>\r\n");
 							fw.flush();
@@ -773,7 +828,9 @@ public class UserWebsocketBroadCasting {
 					//if(!client.equals(session)){
 						try {
 							client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+message+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-							txtLog= new File(txtPath+fileDate+"강서구.txt");
+							File folder = new File(txtPath+fileDate);
+							if(!folder.exists())folder.mkdir();
+							txtLog= new File(txtPath+fileDate+"/강서구.txt");
 							BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 							fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span>"+message+" "+timeData+"</span></li><br>\r\n");
 							fw.flush();
@@ -791,7 +848,9 @@ public class UserWebsocketBroadCasting {
 					//if(!client.equals(session)){
 						try {
 							client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+message+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-							txtLog= new File(txtPath+fileDate+"관악구.txt");
+							File folder = new File(txtPath+fileDate);
+							if(!folder.exists())folder.mkdir();
+							txtLog= new File(txtPath+fileDate+"/관악구.txt");
 							BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 							fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span>"+message+" "+timeData+"</span></li><br>\r\n");
 							fw.flush();
@@ -809,7 +868,9 @@ public class UserWebsocketBroadCasting {
 					//if(!client.equals(session)){
 						try {
 							client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+message+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-							txtLog= new File(txtPath+fileDate+"광진구.txt");
+							File folder = new File(txtPath+fileDate);
+							if(!folder.exists())folder.mkdir();
+							txtLog= new File(txtPath+fileDate+"/광진구.txt");
 							BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 							fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span>"+message+" "+timeData+"</span></li><br>\r\n");
 							fw.flush();
@@ -827,7 +888,9 @@ public class UserWebsocketBroadCasting {
 					//if(!client.equals(session)){
 						try {
 							client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+message+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-							txtLog= new File(txtPath+fileDate+"구로구.txt");
+							File folder = new File(txtPath+fileDate);
+							if(!folder.exists())folder.mkdir();
+							txtLog= new File(txtPath+fileDate+"/구로구.txt");
 							BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 							fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span>"+message+" "+timeData+"</span></li><br>\r\n");
 							fw.flush();
@@ -845,7 +908,9 @@ public class UserWebsocketBroadCasting {
 					//if(!client.equals(session)){
 						try {
 							client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+message+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-							txtLog= new File(txtPath+fileDate+"금천구.txt");
+							File folder = new File(txtPath+fileDate);
+							if(!folder.exists())folder.mkdir();
+							txtLog= new File(txtPath+fileDate+"/금천구.txt");
 							BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 							fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span>"+message+" "+timeData+"</span></li><br>\r\n");
 							fw.flush();
@@ -862,7 +927,9 @@ public class UserWebsocketBroadCasting {
 					//if(!client.equals(session)){
 						try {
 							client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+message+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-							txtLog= new File(txtPath+fileDate+"노원구.txt");
+							File folder = new File(txtPath+fileDate);
+							if(!folder.exists())folder.mkdir();
+							txtLog= new File(txtPath+fileDate+"/노원구.txt");
 							BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 							fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span>"+message+" "+timeData+"</span></li><br>\r\n");
 							fw.flush();
@@ -879,7 +946,9 @@ public class UserWebsocketBroadCasting {
 					//if(!client.equals(session)){
 						try {
 							client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+message+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-							txtLog= new File(txtPath+fileDate+"도봉구.txt");
+							File folder = new File(txtPath+fileDate);
+							if(!folder.exists())folder.mkdir();
+							txtLog= new File(txtPath+fileDate+"/도봉구.txt");
 							BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 							fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span>"+message+" "+timeData+"</span></li><br>\r\n");
 							fw.flush();
@@ -896,7 +965,9 @@ public class UserWebsocketBroadCasting {
 					//if(!client.equals(session)){
 						try {
 							client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+message+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-							txtLog= new File(txtPath+fileDate+"동대문구.txt");
+							File folder = new File(txtPath+fileDate);
+							if(!folder.exists())folder.mkdir();
+							txtLog= new File(txtPath+fileDate+"/동대문구.txt");
 							BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 							fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span>"+message+" "+timeData+"</span></li><br>\r\n");
 							fw.flush();
@@ -913,7 +984,9 @@ public class UserWebsocketBroadCasting {
 				//	if(!client.equals(session)){
 						try {
 							client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+message+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-							txtLog= new File(txtPath+fileDate+"동작구.txt");
+							File folder = new File(txtPath+fileDate);
+							if(!folder.exists())folder.mkdir();
+							txtLog= new File(txtPath+fileDate+"/동작구.txt");
 							BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 							fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span>"+message+" "+timeData+"</span></li><br>\r\n");
 							fw.flush();
@@ -930,7 +1003,9 @@ public class UserWebsocketBroadCasting {
 					//if(!client.equals(session)){
 						try {
 							client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+message+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-							txtLog= new File(txtPath+fileDate+"마포구.txt");
+							File folder = new File(txtPath+fileDate);
+							if(!folder.exists())folder.mkdir();
+							txtLog= new File(txtPath+fileDate+"/마포구.txt");
 							BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 							fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span>"+message+" "+timeData+"</span></li><br>\r\n");
 							fw.flush();
@@ -947,7 +1022,9 @@ public class UserWebsocketBroadCasting {
 					//if(!client.equals(session)){
 						try {
 							client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+message+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-							txtLog= new File(txtPath+fileDate+"서대문구.txt");
+							File folder = new File(txtPath+fileDate);
+							if(!folder.exists())folder.mkdir();
+							txtLog= new File(txtPath+fileDate+"/서대문구.txt");
 							BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 							fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span>"+message+" "+timeData+"</span></li><br>\r\n");
 							fw.flush();
@@ -964,7 +1041,9 @@ public class UserWebsocketBroadCasting {
 					//if(!client.equals(session)){
 						try {
 							client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+message+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-							txtLog= new File(txtPath+fileDate+"서초구.txt");
+							File folder = new File(txtPath+fileDate);
+							if(!folder.exists())folder.mkdir();
+							txtLog= new File(txtPath+fileDate+"/서초구.txt");
 							BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 							fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span>"+message+" "+timeData+"</span></li><br>\r\n");
 							fw.flush();
@@ -981,7 +1060,9 @@ public class UserWebsocketBroadCasting {
 					//if(!client.equals(session)){
 						try {
 							client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+message+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-							txtLog= new File(txtPath+fileDate+"성동구.txt");
+							File folder = new File(txtPath+fileDate);
+							if(!folder.exists())folder.mkdir();
+							txtLog= new File(txtPath+fileDate+"/성동구.txt");
 							BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 							fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span>"+message+" "+timeData+"</span></li><br>\r\n");
 							fw.flush();
@@ -998,7 +1079,9 @@ public class UserWebsocketBroadCasting {
 					//if(!client.equals(session)){
 						try {
 							client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+message+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-							txtLog= new File(txtPath+fileDate+"성북구.txt");
+							File folder = new File(txtPath+fileDate);
+							if(!folder.exists())folder.mkdir();
+							txtLog= new File(txtPath+fileDate+"/성북구.txt");
 							BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 							fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span>"+message+" "+timeData+"</span></li><br>\r\n");
 							fw.flush();
@@ -1015,7 +1098,9 @@ public class UserWebsocketBroadCasting {
 					//if(!client.equals(session)){
 						try {
 							client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+message+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-							txtLog= new File(txtPath+fileDate+"송파구.txt");
+							File folder = new File(txtPath+fileDate);
+							if(!folder.exists())folder.mkdir();
+							txtLog= new File(txtPath+fileDate+"/송파구.txt");
 							BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 							fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span>"+message+" "+timeData+"</span></li><br>\r\n");
 							fw.flush();
@@ -1032,6 +1117,13 @@ public class UserWebsocketBroadCasting {
 					//if(!client.equals(session)){
 						try {
 							client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+message+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
+							File folder = new File(txtPath+fileDate);
+							if(!folder.exists())folder.mkdir();
+							txtLog= new File(txtPath+fileDate+"/양천구.txt");
+							BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
+							fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span>"+message+" "+timeData+"</span></li><br>\r\n");
+							fw.flush();
+							fw.close();
 						} catch (IOException e) {
 							System.out.println(e.getMessage());
 						}
@@ -1044,6 +1136,13 @@ public class UserWebsocketBroadCasting {
 					//if(!client.equals(session)){
 						try {
 							client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+message+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
+							File folder = new File(txtPath+fileDate);
+							if(!folder.exists())folder.mkdir();
+							txtLog= new File(txtPath+fileDate+"/영등포구.txt");
+							BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
+							fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span>"+message+" "+timeData+"</span></li><br>\r\n");
+							fw.flush();
+							fw.close();
 						} catch (IOException e) {
 							System.out.println(e.getMessage());
 						}
@@ -1056,7 +1155,9 @@ public class UserWebsocketBroadCasting {
 					//if(!client.equals(session)){
 						try {
 							client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+message+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-							txtLog= new File(txtPath+fileDate+"용산구.txt");
+							File folder = new File(txtPath+fileDate);
+							if(!folder.exists())folder.mkdir();
+							txtLog= new File(txtPath+fileDate+"/용산구.txt");
 							BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 							fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span>"+message+" "+timeData+"</span></li><br>\r\n");
 							fw.flush();
@@ -1073,7 +1174,9 @@ public class UserWebsocketBroadCasting {
 					//if(!client.equals(session)){
 						try {
 							client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+message+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-							txtLog= new File(txtPath+fileDate+"은평구.txt");
+							File folder = new File(txtPath+fileDate);
+							if(!folder.exists())folder.mkdir();
+							txtLog= new File(txtPath+fileDate+"/은평구.txt");
 							BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 							fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span>"+message+" "+timeData+"</span></li><br>\r\n");
 							fw.flush();
@@ -1090,7 +1193,9 @@ public class UserWebsocketBroadCasting {
 					//if(!client.equals(session)){
 						try {
 							client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+message+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-							txtLog= new File(txtPath+fileDate+"종로구.txt");
+							File folder = new File(txtPath+fileDate);
+							if(!folder.exists())folder.mkdir();
+							txtLog= new File(txtPath+fileDate+"/종로구.txt");
 							BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 							fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span>"+message+" "+timeData+"</span></li><br>\r\n");
 							fw.flush();
@@ -1107,7 +1212,9 @@ public class UserWebsocketBroadCasting {
 					//if(!client.equals(session)){
 						try {
 							client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+message+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-							txtLog= new File(txtPath+fileDate+"중구.txt");
+							File folder = new File(txtPath+fileDate);
+							if(!folder.exists())folder.mkdir();
+							txtLog= new File(txtPath+fileDate+"/중구.txt");
 							BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 							fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span>"+message+" "+timeData+"</span></li><br>\r\n");
 							fw.flush();
@@ -1124,7 +1231,9 @@ public class UserWebsocketBroadCasting {
 					//if(!client.equals(session)){
 						try {
 							client.getBasicRemote().sendText(sid+":tastakerChattingSlash:"+message+":tastakerChattingSlash:"+" "+":tastakerChattingSlash:"+rank);
-							txtLog= new File(txtPath+fileDate+"중랑구.txt");
+							File folder = new File(txtPath+fileDate);
+							if(!folder.exists())folder.mkdir();
+							txtLog= new File(txtPath+fileDate+"/중랑구.txt");
 							BufferedWriter fw = new BufferedWriter(new FileWriter(txtLog,true));									
 							fw.write("<li class='othersChatSide'><span class='othersChatBox'><span class='myChatId'><img src='picture/"+rank+".png'>"+sid+" : </span>"+message+" "+timeData+"</span></li><br>\r\n");
 							fw.flush();

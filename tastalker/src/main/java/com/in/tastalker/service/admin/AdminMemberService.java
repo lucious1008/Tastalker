@@ -10,5 +10,7 @@ public interface AdminMemberService {
 	public List<MemberVO> searchMemberCatalog(MemberVO memberVO,int 페이지넘버);
 	public boolean modifyMemberInfo(MemberVO memberVO);
 	public boolean deleteMember(String 유저아이디);
+	public int pageSum();
+	public int searchPageSum(MemberVO memberVO);
 
 }

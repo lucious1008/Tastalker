@@ -42,4 +42,17 @@ public class AdminMemberServiceImpl implements AdminMemberService{
 		return adminMemberDAO.deleteMember(유저아이디);
 	}
 
+	@Override
+	public int pageSum() {
+		// TODO Auto-generated method stub
+		return adminMemberDAO.pageSum();
+	}
+
+	@Override
+	public int searchPageSum(MemberVO memberVO) {
+		// TODO Auto-generated method stub
+		return adminMemberDAO.searchPageSum(memberVO);
+	}
+
+	
 }
